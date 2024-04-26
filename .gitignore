@@ -1,0 +1,6 @@
+.venv/
+output/
+runs/
+*.pt
+*.torchscript
+data/
