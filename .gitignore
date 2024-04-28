@@ -1,6 +1,8 @@
 .venv/
+venv/
 output/
 runs/
 *.pt
 *.torchscript
 data/
+*.onnx
