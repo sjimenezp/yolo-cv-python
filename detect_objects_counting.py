@@ -14,7 +14,7 @@ WINDOW_WIDTH = 1024
 WINDOW_NAME = "Tracking objects"
 VIDEO_SOURCE = "data/people_walking.mp4"
 OUTPUT_PATH = "output"
-YOLO_MODEL = "yolov8x.pt"
+YOLO_MODEL = "yolov5mu_v3.pt"
 
 track_history = defaultdict(list)
 

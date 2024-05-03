@@ -15,7 +15,7 @@ def print_mouse_coordinates(event, x, y, _, __):
 
 def main(mouse=False, speed=None, webcam=False, resize=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model = YOLO("yolov8m.pt")
+    model = YOLO("yolov5mu.pt")
     count = 0
 
     window_name = "Video Player"

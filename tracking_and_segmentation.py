@@ -17,7 +17,7 @@ def print_mouse_coordinates(event, x, y, _, __):
 
 def main(mouse=False, speed=None, webcam=False, resize=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model = YOLO("yolov8n-seg.pt")  # Load an official Detect model
+    model = YOLO("yolov8n-seg.pt")
     count = 0
 
     window_name = WINDOW_NAME

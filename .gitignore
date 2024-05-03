@@ -6,3 +6,4 @@ runs/
 *.torchscript
 data/
 *.onnx
+custom_train/

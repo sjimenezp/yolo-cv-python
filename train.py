@@ -2,9 +2,9 @@ from ultralytics import YOLO
 import os
 import torch
 
-MODEL = "yolov8n.pt"
-DATASET_PATH = "datasets/coco8.yaml"
-EPOCHS = 100
+MODEL = "yolov5mu_custom_trained.pt"
+DATASET_PATH = "custom_train"
+EPOCHS = 25
 IMG_SIZE = 640
 
 
@@ -13,7 +13,7 @@ def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = YOLO(MODEL)
     model.train(
-        data=full_path,
+        data=full_path + "/data.yaml",
         epochs=EPOCHS,
         imgsz=IMG_SIZE,
         device=device,

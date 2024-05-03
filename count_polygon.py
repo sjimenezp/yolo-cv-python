@@ -1,14 +1,15 @@
 import cv2
 import argparse
-import numpy as np
 from ultralytics import YOLO
 from ultralytics.solutions import object_counter
 import torch
 
+torch.backends.cudnn.enabled = False
+
 WINDOW_WIDTH = 1024
 VIDEO_SOURCE = "data/people_walking.mp4"
-ENTER_AREA = [(20, 400), (1080, 404), (1080, 360), (20, 360)]
-CLASSES = [0, 2]  # person and car classes for count
+ENTER_AREA = [(0, 650), (1280, 650), (1280, 700), (0, 700)]
+CLASSES = [0, 2]
 
 
 def print_mouse_coordinates(event, x, y, _, __):
@@ -19,10 +20,7 @@ def print_mouse_coordinates(event, x, y, _, __):
 
 def main(mouse=False, speed=None, webcam=False, resize=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model = YOLO("yolov9e.pt")  # Load an official Detect model
-    # model = YOLO("yolov8n.pt")  # Load an official Detect model
-    # model = YOLO("yolov8n-seg.pt")  # Load an official Segment model
-    # model = YOLO("yolov8x-pose-p6.pt")  # Load an official Pose model
+    model = YOLO("yolov5mu_v3.pt")
     count = 0
 
     window_name = "Video Player"

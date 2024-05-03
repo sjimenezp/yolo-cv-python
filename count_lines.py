@@ -1,6 +1,5 @@
 import cv2
 import argparse
-import numpy as np
 from ultralytics import YOLO
 from ultralytics.solutions import object_counter
 import torch
@@ -19,10 +18,7 @@ def print_mouse_coordinates(event, x, y, _, __):
 
 def main(mouse=False, speed=None, webcam=False, resize=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model = YOLO("yolov8n.pt")  # Load an official Detect model
-    # model = YOLO("yolov8n.pt")  # Load an official Detect model
-    # model = YOLO("yolov8n-seg.pt")  # Load an official Segment model
-    # model = YOLO("yolov8x-pose-p6.pt")  # Load an official Pose model
+    model = YOLO("yolov5mu_v3.pt")
     count = 0
 
     window_name = "Video Player"
